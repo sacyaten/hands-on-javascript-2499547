@@ -9,6 +9,16 @@
 import data from "./data.js";
 import Cardlist from "./components/Cardlist.js";
 
+const License = {
+  License: "Unsplash License",
+  LicenseURL: "https://unsplash.com/license",
+};
+
+const newData = data.map((imgData) => {
+  const newImgData = { ...imgData, ...License };
+  return newImgData;
+});
+
 const mainContent = document.querySelector(".main-content");
 
-mainContent.innerHTML = Cardlist(data);
+mainContent.innerHTML = Cardlist(newData);
